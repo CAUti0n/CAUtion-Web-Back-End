@@ -37,7 +37,7 @@ app.use('/management', managementRouter);
 //app.use('/study', studyRouter);
 
 // 4. Activity page
-//app.use('/study', activityRouter);
+//app.use('/activity', activityRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
