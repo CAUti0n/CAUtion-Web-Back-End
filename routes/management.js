@@ -37,12 +37,12 @@ const getNotionAPI = async() => {
 
 
 router.get('/', async(req, res) => {
-  res.send("management page")
+  //res.send("management page")
 
   const managementData = await getNotionAPI();
+  res.send(managementData);
   console.log(managementData)
 
 });
 
 module.exports = router;
-
