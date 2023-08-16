@@ -26,6 +26,7 @@ const getNotionAPI = async() => {
       grade: manager.properties.grade.select.name,
       title: manager.properties.name.title[0].plain_text,
       manage: manager.properties.management.select.name,
+      githubURL: manager.properties.github.url,
     };
   });
 
