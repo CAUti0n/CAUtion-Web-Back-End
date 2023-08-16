@@ -5,10 +5,13 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
 var app = express();
+
+// add route files
+var indexRouter = require('./routes/index');
+var managementRouter = require('./routes/management');
+var studyRouter = require('./routes/study');
+var activityRouter = require('./routes/activity');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,10 +25,19 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Use React static files
-app.use(express.static(path.join(__dirname, '/../CAUtion-Web-Front-End/build/')));
+//app.use(express.static(path.join(__dirname, '/../CAUtion-Web-Front-End/public/')));
 
+// 1. landing page
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+
+// 2. Management page
+app.use('/management', managementRouter);
+
+// 3. Study page
+app.use('/study', studyRouter);
+
+// 4. Activity page
+app.use('/activity', activityRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
