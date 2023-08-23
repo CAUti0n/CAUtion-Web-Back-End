@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Use React static files
-app.use(express.static(path.join(__dirname, '/../CAUtion-Web-Front-End/public/')));
+app.use(express.static(path.join(__dirname, '/../CAUtion-Web-Front-End/build/')));
 
 // 1. landing page
 app.use('/', indexRouter);
