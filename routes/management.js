@@ -22,11 +22,12 @@ const getNotionAPI = async() => {
 
   const ManagerAPI = ManagementData.results.map((manager) => {
     return {
-      year: manager.properties.year.select.name,
       grade: manager.properties.grade.select.name,
       title: manager.properties.name.title[0].plain_text,
       manage: manager.properties.management.select.name,
       githubURL: manager.properties.github.url,
+      email: manager.properties.emails.email,
+      image: manager.properties.img.files[0].file.url,
     };
   });
 
