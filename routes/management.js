@@ -16,7 +16,11 @@ const getNotionAPI = async() => {
       select:{
         is_not_empty: true,
       }
-    }
+    },
+    sorts: [{
+      property: "management",
+      direction: "descending:
+    }],
   
   })
 
