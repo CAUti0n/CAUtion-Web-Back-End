@@ -19,7 +19,7 @@ const getNotionAPI = async() => {
     },
     sorts: [{
       property: "management",
-      direction: "descending:
+      direction: "descending
     }],
   
   })
